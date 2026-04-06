@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BedolagichSigner | Mass Transaction Signing for Solana</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-overlay"></div>
+    
+    <!-- Плавающие частицы -->
+    <div class="particle" style="width: 120px; height: 120px; left: 5%; bottom: -120px; animation-duration: 22s;"></div>
+    <div class="particle" style="width: 70px; height: 70px; left: 85%; bottom: -70px; animation-duration: 28s; animation-delay: 2s;"></div>
+    <div class="particle" style="width: 50px; height: 50px; left: 70%; bottom: -50px; animation-duration: 18s; animation-delay: 4s;"></div>
+    <div class="particle" style="width: 90px; height: 90px; left: 30%; bottom: -90px; animation-duration: 24s; animation-delay: 1s;"></div>
+    <div class="particle" style="width: 40px; height: 40px; left: 50%; bottom: -40px; animation-duration: 15s; animation-delay: 3s;"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-wrapper">
+    <img src="logo.png" alt="BedolagichSigner Logo" class="logo-image">
+    <div class="logo-text">BedolagichSigner</div>
+</div>
+            <p class="subtitle">Mass transaction signing for Solana —<br>83x cheaper than any competitor</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-value" id="priceDisplay">0.0003</span>
+                <span class="stat-label">SOL per tx</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">83x</span>
+                <span class="stat-label">cheaper</span>
+            </div>
+            <div class="stat-card" id="giftCard">
+                <span class="stat-value" id="giftValue">50</span>
+                <span class="stat-label" id="giftLabel">free left</span>
+            </div>
+        </div>
+
+        <div class="wallet-card">
+            <div class="wallet-info">
+                <div class="wallet-status">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="walletStatus">Not connected</span>
+                </div>
+                <span id="walletAddress" class="wallet-address"></span>
+            </div>
+            <button id="connectBtn" class="btn btn-primary">Connect Phantom</button>
+        </div>
+
+        <div class="upload-card" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <p class="upload-text">Select transaction file</p>
+            <p class="upload-hint">JSON format with base64 transactions</p>
+            <input type="file" id="fileInput" accept=".json" hidden>
+        </div>
+
+        <div class="actions">
+            <button id="signBtn" class="btn btn-success" disabled>Sign All Transactions</button>
+        </div>
+
+        <div id="result" class="result-card"></div>
+
+        <div class="footer">
+            <p>Your fee: <strong id="footerFee">FREE (first 50) per transaction</strong></p>
+            <p class="footer-small">Powered by Solana • Instant processing</p>
+            <p class="gas-note">⚡ Network fee applies once per batch — up to 75% cheaper!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.78.0/lib/index.iife.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
